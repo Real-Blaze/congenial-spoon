@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keystone - Kingdom of Valoria Chatbot</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header: Title, Hamburger (left), New Chat (right) -->
+  <header>
+    <button id="menu-btn" aria-label="Open menu">
+      <span class="hamburger"></span>
+    </button>
+    <h1 id="keystone-title">Keystone</h1>
+    <button id="new-chat-btn" aria-label="Start new chat">New Chat</button>
+  </header>
+
+  <!-- Menu Drawer -->
+  <nav id="side-menu" class="side-menu">
+    <button id="close-menu" aria-label="Close menu">&times;</button>
+    <ul>
+      <li>
+        <label class="toggle-label">
+          <span>Gemini Model:</span>
+          <input type="checkbox" id="model-toggle">
+          <span id="model-name">1.5 Flash</span>
+        </label>
+      </li>
+      <li>
+        <button id="about-valoria-btn">About Valoria</button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- About Valoria Modal -->
+  <div id="about-modal" class="modal">
+    <div class="modal-content">
+      <button id="close-modal" class="close-modal" aria-label="Close">&times;</button>
+      <h2>Kingdom of Valoria</h2>
+      <div id="lore-content"></div>
+    </div>
+  </div>
+
+  <!-- Main Chat UI -->
+  <main>
+    <div id="welcome" class="centered">
+      <p>How can I help you today?</p>
+    </div>
+    <div id="chat-window"></div>
+    <form id="chat-form" autocomplete="off">
+      <input type="text" id="user-input" placeholder="Type your message..." required autofocus>
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
+  <!-- Spinner -->
+  <div id="thinking-spinner" class="spinner hidden">
+    <span>Keystone is thinking...</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+  </html>
